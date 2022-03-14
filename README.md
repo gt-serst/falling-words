@@ -1,2 +1,2 @@
-# MyFirstGame
+# TypingGame
 wesh
