@@ -14,7 +14,6 @@ public class WordInput : MonoBehaviour
             {
                 if(!PauseMenu.gameIsPaused && !GameManager.gameHasEnded && letter == alphabet[i])
                 {
-                    print(letter);
                     wordManager.TypeLetter(letter);
                 }
             }

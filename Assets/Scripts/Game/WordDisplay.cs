@@ -8,6 +8,7 @@ public class WordDisplay : MonoBehaviour
     public TMP_Text text;
 
     public float fallSpeed = 1f;
+
     public void SetWord (string word)
     {
         text.text = word;
@@ -24,6 +25,7 @@ public class WordDisplay : MonoBehaviour
     public void Update()
     {
         transform.Translate(fallSpeed * Time.deltaTime, 0f, 0f); //move the word a tiny each frame
+
     }
 
 }

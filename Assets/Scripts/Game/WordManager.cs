@@ -7,11 +7,11 @@ public class WordManager : MonoBehaviour
     public List<Word> words;
 
     public WordSpawner wordSpawner;
-    private bool hasActiveWord;
+    public bool hasActiveWord;
     private Word activeWord;
 
-    private float correctLetter = 0;
-    private float incorrectLetter = 0;
+    public float correctLetter = 0;
+    public float incorrectLetter = 0;
     public int correctWord = 0;
     public AudioSource audioSource;
     public AudioClip wrongLetter;
@@ -20,27 +20,37 @@ public class WordManager : MonoBehaviour
 
     void Update()
     {
-
         ScoreInGame.totalScore = correctWord;
-
+        Score.scoreValue = (1 - (incorrectLetter / correctLetter))*100;
+        
         GameObject[] Target = GameObject.FindGameObjectsWithTag("Word");
-        foreach(GameObject item  in Target)
+        
+        foreach(GameObject item  in Target) //vérification de la position du GameObject et destruction si dépasse la ligne d'arrivée des mots
         {
             position = item.transform.position.x;
 
             if(position > 7f)
             {
-                Score.scoreValue = (1 - (incorrectLetter / correctLetter))*100;
-                print(Score.scoreValue);
-                GameManager.instance.Victory();
+                if(hasActiveWord == true)
+                {
+                    hasActiveWord = false;
+                    words.Remove(activeWord);
+                    Destroy(item);
+                }
+                else
+                {
+                    Destroy(item);
+                    words.RemoveAt(0); // on enlève le premier mot de la liste Word car son GameObject vient d'être détruit
+                }
             }
         }
     }
     public void AddWord()
     {
-        Word word = new Word(WordGenerator.GetRandomWord(), wordSpawner.SpawnWord());
+        Word word = new Word(WordGenerator.GetRandomWord(), wordSpawner.SpawnWord()); // le mot Word se lie avec le vrai mot du jeu
         Debug.Log(word.word);
         words.Add(word);
+
     }
 
     public void TypeLetter(char letter)

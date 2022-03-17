@@ -6,6 +6,7 @@ public class Word {
     private int typeIndex;
     WordDisplay display;
 
+
     public Word (string _word, WordDisplay _display)
     {
         word = _word;
@@ -32,6 +33,7 @@ public class Word {
         {
             display.RemoveWord(); //Remove the word on screen
         }
+        
         return wordTyped;
     }   
 }
