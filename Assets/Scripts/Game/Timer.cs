@@ -11,16 +11,14 @@ public class Timer : MonoBehaviour
     float tick;
     public Joker joker;
 
-    void Awake()
+    void Start()
     {
-        time = (int)Time.time;
         tick = timerInterval;
-
     }
     void Update()
     {
-        GetComponent<TMP_Text>().text = time.ToString();
-        time = (int)Time.time;
+        time = Time.timeSinceLevelLoad;
+        GetComponent<TMP_Text>().text = ( (int)time).ToString();
 
         if(time == tick && time != 90f)
         {

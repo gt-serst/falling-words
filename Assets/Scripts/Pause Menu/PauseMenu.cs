@@ -3,10 +3,14 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
-    public static bool gameIsPaused = false;
+    public static bool gameIsPaused;
     public GameObject pauseMenuUI;
     public GameObject optionsWindow;
     
+    void Start()
+    {
+        gameIsPaused = false;
+    }
     void Update()
     {
         if (!GameManager.gameHasEnded && Input.GetKeyDown(KeyCode.Escape) && pauseMenuUI.activeSelf)

@@ -7,7 +7,9 @@ public class MainMenu : MonoBehaviour
 {
     public void PlayGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); //when you press play the next level comes
+        //SceneManager.LoadScene("Game");
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().Game);
+        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1); //when you press play the next level comes
         // SceneManager.LoadScene("Game");
     }
     public void QuitGame()
