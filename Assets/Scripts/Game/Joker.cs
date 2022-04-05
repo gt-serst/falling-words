@@ -1,21 +1,38 @@
 using UnityEngine;
 public class Joker : MonoBehaviour
 {
-    public bool jokerIsUsed = false;    
+    public bool jokerAvailable;    
+    private Animator mAnimator;
+
+    void Start()
+    {
+        jokerAvailable = false;
+        mAnimator = GetComponent<Animator>();
+    }
+
 
     void Update()
     {
-        if(!PauseMenu.gameIsPaused && !GameManager.gameHasEnded && Input.GetKeyDown(KeyCode.Space))
+
+        if(!PauseMenu.gameIsPaused && !GameManager.gameHasEnded)
         {
-            if(!jokerIsUsed)
+            if(GameObject.FindGameObjectsWithTag("Word").Length == 0)
             {
-                Time.timeScale = 0f;
-                jokerIsUsed = true;
-            }
-            else
-            {
+                mAnimator.SetTrigger("TrEnd");
                 Time.timeScale = 1f;
             }
-        }
+
+            if(jokerAvailable)
+            {
+                mAnimator.SetTrigger("TrStart");
+            }
+
+            if(jokerAvailable && Input.GetKeyDown(KeyCode.Space))
+            {
+                Time.timeScale = 0f;
+                jokerAvailable = false;
+            }
+        }     
     }
 }
+

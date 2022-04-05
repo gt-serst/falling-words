@@ -5,12 +5,26 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public void PlayGame()
+    public void Start()
     {
-        //SceneManager.LoadScene("Game");
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().Game);
-        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1); //when you press play the next level comes
-        // SceneManager.LoadScene("Game");
+        Time.timeScale = 1f;
+    }
+
+    public void PlayLevelOne()
+    {
+        SceneManager.LoadScene("Game");
+    }
+    public void PlayLevelTwo()
+    {
+
+    }
+    public void PlayLevelThree()
+    {
+
+    }
+    public void PlayLevelFour()
+    {
+
     }
     public void QuitGame()
     {

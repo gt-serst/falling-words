@@ -17,11 +17,11 @@ public class ScoreInGame : MonoBehaviour
     {
         if(totalScore <= 1)
         {
-            scoreInGame.text = totalScore + " mot correct";
+            scoreInGame.text = totalScore + "";
         }
         else
         {
-            scoreInGame.text = totalScore + " mots corrects";
+            scoreInGame.text = totalScore + "";
         }
          
     }

@@ -28,7 +28,7 @@ public class Word {
     }
     public bool WordTyped()
     {
-        bool wordTyped = (typeIndex >= word.Length);
+        bool wordTyped = (typeIndex >= word.Length); //bool check si l'indexe a été incrémenté jusqu'à la longueur du mot, true si c'est le cas
         if(wordTyped)
         {
             display.RemoveWord(); //Remove the word on screen

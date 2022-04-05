@@ -6,10 +6,11 @@ using TMPro;
 
 public class Timer : MonoBehaviour
 {
-    float time;
+    int time;
     public float timerInterval = 15f;
     float tick;
     public Joker joker;
+
 
     void Start()
     {
@@ -17,15 +18,16 @@ public class Timer : MonoBehaviour
     }
     void Update()
     {
-        time = Time.timeSinceLevelLoad;
-        GetComponent<TMP_Text>().text = ( (int)time).ToString();
+        time = (int)Time.timeSinceLevelLoad;
+        GetComponent<TMP_Text>().text = time.ToString();
 
-        if(time == tick && time != 90f)
+        if(time == tick && time != 30f)
         {
             tick = time + timerInterval;
-            joker.jokerIsUsed = false;
+            joker.jokerAvailable = true;
         }
-        else if (time == 90f)
+
+        else if (time == 30f)
         {
             EndGame();
         }
@@ -36,3 +38,4 @@ public class Timer : MonoBehaviour
         GameManager.instance.Victory();
     }
 }
+

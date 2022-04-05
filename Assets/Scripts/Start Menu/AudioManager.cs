@@ -12,16 +12,6 @@ public class AudioManager : MonoBehaviour
     {
         audioSource.clip = playlist[0];
         audioSource.Play();
-        
-    }
-
-    void Update()
-    {
-        if(!audioSource.isPlaying)
-        {
-            PlayNextSong();
-        }
-        
     }
 
     void PlayNextSong()
@@ -29,6 +19,5 @@ public class AudioManager : MonoBehaviour
         musicIndex = (musicIndex + 1) % playlist.Length;
         audioSource.clip = playlist[musicIndex];
         audioSource.Play();
-
     }
 }

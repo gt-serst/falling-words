@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public static bool gameHasEnded = false;
+    public static bool gameHasEnded;
 
     public static GameManager instance;
     public ScoreMenu scoreMenu;
@@ -18,15 +18,17 @@ public class GameManager : MonoBehaviour
         instance = this;
     }
 
+    void Start()
+    {
+        gameHasEnded = false;
+    }
+
     public void Victory()
     {
         gameHasEnded = true;
         Time.timeScale = 0f;
         scoreMenu.Score();
-    }
-    
-    //simplifier par une fonction victory lorsque un gameobject dépasse la ligne + affichage du score
-    
+    }    
 }
 
 

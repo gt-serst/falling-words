@@ -97,7 +97,7 @@ public class WordManager : MonoBehaviour
         {
             audioSource.PlayOneShot(rightWord);
             correctWord++;
-            //score bon nombre de mots-> rightword ++ puis display sur le menu score
+            //mettre l'anim lampe
             hasActiveWord = false;
             words.Remove(activeWord);
         }

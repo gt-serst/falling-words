@@ -13,15 +13,15 @@ public class PauseMenu : MonoBehaviour
     }
     void Update()
     {
-        if (!GameManager.gameHasEnded && Input.GetKeyDown(KeyCode.Escape) && pauseMenuUI.activeSelf)
+        if (!GameManager.gameHasEnded && Input.GetKeyDown(KeyCode.Tab) && pauseMenuUI.activeSelf)
         {
             Resume();
         }
-        else if (!GameManager.gameHasEnded && Input.GetKeyDown(KeyCode.Escape) && !gameIsPaused)
+        else if (!GameManager.gameHasEnded && Input.GetKeyDown(KeyCode.Tab) && !gameIsPaused)
         {
             Pause();
         }
-        else if (!GameManager.gameHasEnded && Input.GetKeyDown(KeyCode.Escape) && optionsWindow.activeSelf)
+        else if (!GameManager.gameHasEnded && Input.GetKeyDown(KeyCode.Tab) && optionsWindow.activeSelf)
         {
             Resume();
         }
@@ -42,7 +42,7 @@ public class PauseMenu : MonoBehaviour
             gameIsPaused = false;
         }
     }
-    void Pause()
+    public void Pause()
     {
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f; 
@@ -51,7 +51,6 @@ public class PauseMenu : MonoBehaviour
 
     public void LoadMenu()
     {
-        Time.timeScale = 1f;
         SceneManager.LoadScene("Menu"); 
     }
     public void QuitGame()
