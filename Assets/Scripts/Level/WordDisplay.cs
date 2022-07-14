@@ -5,7 +5,6 @@ public class WordDisplay : MonoBehaviour
 {
     //We can create a start method here to have random fall speed
     public TMP_Text text;
-
     public int level;
     public void Awake ()
     {  
@@ -30,9 +29,17 @@ public class WordDisplay : MonoBehaviour
         {
             transform.Translate(0f, 0f, 0f); //move the word a tiny each frame
         }
-        else
-        {   
-            transform.Translate((Time.deltaTime * 3f), 0f, 0f); //move the word a tiny each frame
+        if(level == 2)
+        {
+            transform.Translate((Time.deltaTime * 2f), 0f, 0f);
+        }
+        if(level == 3)
+        {
+            transform.Translate((Time.deltaTime * 2f), 0f, 0f);
+        }
+        if(level == 4)
+        {
+            transform.Translate((Time.deltaTime * 3f), 0f, 0f);
         }
     }
 }

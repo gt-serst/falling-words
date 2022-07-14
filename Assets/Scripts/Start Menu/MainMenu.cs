@@ -16,7 +16,6 @@ public class MainMenu : MonoBehaviour
     {
         level = 1;
         SceneManager.LoadScene("Level");
-        print(level);
         PlayerPrefs.SetInt("Sauv_Language",level);//Enregistre le int dans les playerPref
     }
     public void PlayLevelTwo()

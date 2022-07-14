@@ -50,8 +50,8 @@ public class WordManager : MonoBehaviour
     public void AddWord()
     {
         
-        string word_text ;
-        Word word = new Word(WordGenerator.GetRandomWord(), wordSpawner.SpawnWord()); // le mot Word se lie avec le vrai mot du jeu
+        //string word_text;
+        Word word = new Word(WordGenerator.GetNextWord(), wordSpawner.SpawnWord()); // le mot Word se lie avec le vrai mot du jeu
         words.Add(word);
     }
 
@@ -64,7 +64,7 @@ public class WordManager : MonoBehaviour
                 activeWord.TypeLetter(); //Remove it from the word
                 correctLetter++;
             }
-            else 
+            else
             {
                 audioSource.PlayOneShot(wrongLetter);
                 incorrectLetter++;
