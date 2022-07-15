@@ -5,8 +5,8 @@ using UnityEngine;
 public class WordGenerator : MonoBehaviour
 {
 
-    private static string [] wordList = {"Aa", "Ab", "Ac", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"};
-    
+    private static string [] wordList = {"Chevalier", "Maison", "Arbre", "Fleur", "Meuble", "Travailler", "Jouer", "Feutre", "Fille", "Canon"};
+    private static int compteur = 0;
     void Start(){
 
         GameObject[] objs = GameObject.FindGameObjectsWithTag("UserWords");
@@ -17,13 +17,34 @@ public class WordGenerator : MonoBehaviour
 
     }
 
-    
-    public static string GetRandomWord()
-    {
-        int randomIndex = Random.Range(0, wordList.Length);
-        string randomWord = wordList[randomIndex];
+    /* Fonction pour randomiser l'apparition des mots dans le jeu */
 
-        return randomWord;
+    // public static string GetRandomWord()
+    // {
+    //     int randomIndex = Random.Range(0, wordList.Length);
+    //     string randomWord = wordList[randomIndex];
+
+    //     return randomWord;
        
+    // }
+
+    /* Fonction pour suivre la séquence logique des mots dans la phrase lorsqu'il apparaisse */
+    
+    public static string GetNextWord()
+    {
+        string nextWord;
+
+        if(compteur <= wordList.Length - 1)
+        {
+            nextWord = wordList[compteur];
+            compteur++;
+        }
+        else
+        {
+            compteur = 0;
+            nextWord = wordList[compteur];
+            compteur++;
+        }
+        return nextWord;
     }
 }

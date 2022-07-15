@@ -16,15 +16,15 @@ public class Score : MonoBehaviour
     {
         if(System.Single.IsNaN( scoreValue ))
         {
-            score.text = "Vous n'avez pas tapé de touche...";
+            score.text = "Tu n'as pas tapé de touche";
         }
         else if(scoreValue < 0)
         {
-            score.text = "Vous avez fait beaucoup d'erreurs...";
+            score.text = "Tu as fait beaucoup de fautes, ce n'est pas grave, tu apprends de tes erreurs !";
         }
         else
         {
-            score.text = "Score: " + (int)scoreValue + " %";
+            score.text = "Score: " + (int)scoreValue + " %, bravo !";
         }
     }
 }
