@@ -51,7 +51,7 @@ public class WordManager : MonoBehaviour
     {
         
         //string word_text;
-        Word word = new Word(WordGenerator.GetNextWord(), wordSpawner.SpawnWord()); // le mot Word se lie avec le vrai mot du jeu
+        Word word = new Word(WordGenerator.GetRandomWord(), wordSpawner.SpawnWord()); // le mot Word se lie avec le vrai mot du jeu
         words.Add(word);
     }
 

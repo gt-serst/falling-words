@@ -19,14 +19,14 @@ public class WordGenerator : MonoBehaviour
 
     /* Fonction pour randomiser l'apparition des mots dans le jeu */
 
-    // public static string GetRandomWord()
-    // {
-    //     int randomIndex = Random.Range(0, wordList.Length);
-    //     string randomWord = wordList[randomIndex];
+    public static string GetRandomWord()
+    {
+        int randomIndex = Random.Range(0, wordList.Length);
+        string randomWord = wordList[randomIndex];
 
-    //     return randomWord;
+        return randomWord;
        
-    // }
+    }
 
     /* Fonction pour suivre la séquence logique des mots dans la phrase lorsqu'il apparaisse */
     
