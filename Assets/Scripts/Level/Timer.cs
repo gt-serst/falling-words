@@ -12,6 +12,8 @@ public class Timer : MonoBehaviour
     float tick;
     public Joker joker;
     public int level;
+    public bool game_ended = false; // useful for not sending every second the victory message when the game is finished
+
     public void Awake ()
     {  
         level = PlayerPrefs.GetInt("Sauv_Language"); //recup de la variable sauv dans les PlayerPrefs
@@ -28,8 +30,9 @@ public class Timer : MonoBehaviour
             time = (int)90f - (int)Time.timeSinceLevelLoad;
             GetComponent<TMP_Text>().text = time.ToString();
 
-            if(time == 0f)
+            if(time == 0f && !game_ended)
             {
+                game_ended = true;
                 GameManager.instance.Victory();
             }
             
@@ -47,8 +50,9 @@ public class Timer : MonoBehaviour
                 joker.jokerAvailable = true;
             }
 
-            else if (time == 0f)
+            else if (time == 0f && !game_ended)
             {
+                game_ended = true;
                 GameManager.instance.Victory();
             }
         }

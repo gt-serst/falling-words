@@ -8,9 +8,6 @@ public class WordInput : MonoBehaviour
     void Update()
     {   
         
-      
-
-     
         foreach(char letter in Input.inputString)
         {
             if(!PauseMenu.gameIsPaused && !GameManager.gameHasEnded){

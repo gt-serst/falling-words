@@ -1805,7 +1805,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wordManager: {fileID: 499588508}
-  alphabet: 6100620063006400650066006700680069006a006b006c006d006e006f0070007100720073007400750076007700780079007a00
 --- !u!114 &499588508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2528,6 +2527,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreMenu: {fileID: 1870482267}
+  wordManager: {fileID: 499588508}
 --- !u!4 &986520938
 Transform:
   m_ObjectHideFlags: 0
