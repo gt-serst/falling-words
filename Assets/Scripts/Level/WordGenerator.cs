@@ -5,7 +5,7 @@ using UnityEngine;
 public class WordGenerator : MonoBehaviour
 {
 
-    private static string [] wordList = {"Chevalier", "Maison", "Arbre", "Fleur", "Meuble", "Travailler", "Jouer", "Feutre", "Fille", "Canon"};
+    private static string [] wordList = {"Anticonstitutionnellement", "Maison", "Arbre", "Fleur", "Meuble", "Travailler", "Jouer", "Feutre", "Fille", "Canon"};
     private static int compteur = 0;
     void Start(){
 
@@ -25,11 +25,11 @@ public class WordGenerator : MonoBehaviour
         string randomWord = wordList[randomIndex];
 
         return randomWord;
-       
+
     }
 
     /* Fonction pour suivre la séquence logique des mots dans la phrase lorsqu'il apparaisse */
-    
+
     public static string GetNextWord()
     {
         string nextWord;

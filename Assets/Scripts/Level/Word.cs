@@ -11,7 +11,7 @@ public class Word {
         word = _word;
         typeIndex = 0;
 
-        display = _display; 
+        display = _display;
         display.SetWord(word);
 
     }
@@ -32,7 +32,7 @@ public class Word {
         {
             display.RemoveWord(); //Remove the word on screen
         }
-        
+
         return wordTyped;
-    }   
+    }
 }

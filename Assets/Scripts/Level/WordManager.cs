@@ -38,9 +38,9 @@ public class WordManager : MonoBehaviour
     {
         ScoreInGame.totalScore = correctWord;
         Score.scoreValue = (1 - (incorrectLetter / correctLetter))*100;
-        
+
         GameObject[] Target = GameObject.FindGameObjectsWithTag("Word");
-        
+
         foreach(GameObject item  in Target) //vérification de la position du GameObject et destruction si dépasse la ligne d'arrivée des mots
         {
             position = item.transform.position.x;
@@ -70,7 +70,7 @@ public class WordManager : MonoBehaviour
     }
     public void AddWord()
     {
-        
+
         //string word_text;
         Word word = new Word(WordGenerator.GetRandomWord(), wordSpawner.SpawnWord()); // le mot Word se lie avec le vrai mot du jeu
         words.Add(word);
@@ -98,7 +98,7 @@ public class WordManager : MonoBehaviour
                 audioSource.PlayOneShot(wrongLetter);
 
                 if(!is_letter_false){
-                    incorrectLetter++; 
+                    incorrectLetter++;
                     is_letter_false = true;
                     text = text +correct_letter; // word.GetNextLetter() was the correct letter to write
                     text_typed = text_typed  + letter; // letter is the false letter that has been typed
@@ -107,7 +107,7 @@ public class WordManager : MonoBehaviour
                 }
             }
 
-                
+
 
         }else
         {
@@ -120,32 +120,32 @@ public class WordManager : MonoBehaviour
                     hasActiveWord = true;
                     word.TypeLetter();
                     correctLetter++;
-                    
-                   
 
-                    
+
+
+
                     if(!is_letter_false){// the user typed correctly the letter on the first try
                          // between each word, we add a space to improve the readability (but not for the first word)
                         if(text.Length!=0){
                             text = text + " " +correct_letter;// correct_letter was the letter to type
-                            text_typed = text_typed + " "+letter;// letter was the letter to type and it was correctly typed 
+                            text_typed = text_typed + " "+letter;// letter was the letter to type and it was correctly typed
                         }  else{
                             text = text  +correct_letter;// correct_letter was the letter to type
-                            text_typed = text_typed +letter;// letter was the letter to type and it was correctly typed 
+                            text_typed = text_typed +letter;// letter was the letter to type and it was correctly typed
                         }
 
-                        
+
                     }   else{// the user typed correctly the letter after typing it wrongly once or more
                         is_letter_false=false;
-                    }               
+                    }
                 }
                 else
                 {
                     audioSource.PlayOneShot(wrongLetter);
 
                     if(!is_letter_false){ // the first time that is write wrongly the letter (of the new word in this case)
-                        incorrectLetter++; 
-                        
+                        incorrectLetter++;
+
                         if(text.Length!=0){
                             text = text +" "+ correct_letter; // correct_letter was the correct letter to write
                             text_typed = text_typed  +" "+ letter; // letter is the false letter that has been typed
@@ -159,12 +159,12 @@ public class WordManager : MonoBehaviour
                         // do nothing because the error has already been stored
                     }
                 }
-                
+
                 break;
             }
-            
-            
-        
+
+
+
         }
 
         if (hasActiveWord && activeWord.WordTyped())
