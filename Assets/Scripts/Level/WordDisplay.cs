@@ -13,7 +13,7 @@ public class WordDisplay : MonoBehaviour
     }
     public void SetWord (string word)
     {
-        text.text = "<color=red>" + word + "</color>";
+        text.text = word;
     }
     public void RemoveLetter() // when we write word we remove it and when we write each letter that also get removed
     {

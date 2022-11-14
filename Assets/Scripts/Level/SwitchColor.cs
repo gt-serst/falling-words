@@ -12,14 +12,12 @@ public class SwitchColor : MonoBehaviour
     }
 
     public void SwitchOn()
-    { 
+    {
         nAnimator.SetTrigger("TrStart");
-
     }
 
     public void SwitchOff()
     {
         nAnimator.SetTrigger("TrEnd");
-
     }
 }

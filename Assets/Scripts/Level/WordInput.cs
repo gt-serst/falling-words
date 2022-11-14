@@ -20,7 +20,6 @@ public class WordInput : MonoBehaviour
             if(!PauseMenu.gameIsPaused && !GameManager.gameHasEnded){
                 if (Input.GetKeyDown(KeyCode.Escape))
                 {
-                    Debug.Log("Mettre en pause");
                     pauseMenu.Pause();
                 }
                 else if(Input.GetKeyDown(KeyCode.Space) && (level == 3 || level == 4))
@@ -36,7 +35,6 @@ public class WordInput : MonoBehaviour
             {
                 if(Input.GetKeyDown(KeyCode.Escape))
                 {
-                    Debug.Log("Reprendre");
                     pauseMenu.Resume();
                 }
             }
