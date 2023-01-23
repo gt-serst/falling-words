@@ -4,20 +4,20 @@ using UnityEngine;
 
 public class SwitchColor : MonoBehaviour
 {
-    public Animator nAnimator;
+	public Animator nAnimator;
 
-    public void Start()
-    {
-        nAnimator = GetComponent<Animator>();
-    }
+	public void Start()
+	{
+		nAnimator = GetComponent<Animator>();
+	}
 
-    public void SwitchOn()
-    {
-        nAnimator.SetTrigger("TrStart");
-    }
+	public void SwitchOn()
+	{
+		nAnimator.SetTrigger("TrStart");
+	}
 
-    public void SwitchOff()
-    {
-        nAnimator.SetTrigger("TrEnd");
-    }
+	public void SwitchOff()
+	{
+		nAnimator.SetTrigger("TrEnd");
+	}
 }
