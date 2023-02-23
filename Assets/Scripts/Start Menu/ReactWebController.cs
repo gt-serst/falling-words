@@ -34,9 +34,9 @@ public class ReactWebController : MonoBehaviour
 			userFont = userFonts[0];
 		else if (font == "Arial")
 			userFont = userFonts[1];
-		else if (font == "Century Gothic")
-			userFont = userFonts[2];
 		else if (font == "Trebuchet MS")
+			userFont = userFonts[2];
+		else if (font == "Century Gothic")
 			userFont = userFonts[3];
 		userFontSize = fontSize;
 	}

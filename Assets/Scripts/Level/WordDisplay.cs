@@ -10,9 +10,6 @@ public class WordDisplay : MonoBehaviour
 	public void Awake ()
 	{
 		level = PlayerPrefs.GetInt("Sauv_Language"); //recup de la variable sauv dans les PlayerPrefs
-	}
-	public void Start()
-	{
 		GameObject[] objs = GameObject.FindGameObjectsWithTag("UserWords");
 		ReactWebController rwc = objs[0].GetComponent<ReactWebController>();
 		if (rwc.userFont && rwc.userFontSize != 0)

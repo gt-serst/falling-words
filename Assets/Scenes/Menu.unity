@@ -1438,7 +1438,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   userWords: []
-  userFonts: []
+  userFonts:
+  - {fileID: 11400000, guid: 55cd4e9ebc304497f86cab79dd5f3b3b, type: 2}
+  - {fileID: 11400000, guid: 4e385a4deb3424ca9804bdd87d68e3ae, type: 2}
+  - {fileID: 11400000, guid: a8d877ead1cde4a07a8dacb2ba16e644, type: 2}
+  - {fileID: 11400000, guid: 4271af469172843f0ab957cfeaf490d8, type: 2}
   userFont: {fileID: 0}
   userFontSize: 0
 --- !u!4 &324587520
