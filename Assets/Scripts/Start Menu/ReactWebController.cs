@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
 using System;
 
@@ -22,7 +21,6 @@ public class ReactWebController : MonoBehaviour
 		{
 			Destroy(this.gameObject);
 		}
-
 		DontDestroyOnLoad(this.gameObject);
 	}
 	public void SetWord (string word){
