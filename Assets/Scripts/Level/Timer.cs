@@ -25,7 +25,7 @@ public class Timer : MonoBehaviour
 	}
 	void Update()
 	{
-		if(level == 1 || level == 2)
+		if(level == 1)
 		{
 			time = (int)90f - (int)Time.timeSinceLevelLoad;
 			GetComponent<TMP_Text>().text = time.ToString();
@@ -38,7 +38,7 @@ public class Timer : MonoBehaviour
 
 		}
 
-		if(level == 3 || level == 4)
+		if(level == 2 || level == 3 || level == 4)
 		{
 			time = (int)90f - (int)Time.timeSinceLevelLoad;
 			timerJoker = (int)Time.timeSinceLevelLoad;

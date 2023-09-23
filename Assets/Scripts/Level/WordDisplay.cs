@@ -45,15 +45,15 @@ public class WordDisplay : MonoBehaviour
 		}
 		if(level == 2)
 		{
-			transform.Translate((Time.deltaTime * 2f), 0f, 0f); //move the word a tiny each frame
+			transform.Translate((Time.deltaTime * 1f), 0f, 0f); //move the word a tiny each frame
 		}
 		if(level == 3)
 		{
-			transform.Translate((Time.deltaTime * 2f), 0f, 0f);
+			transform.Translate((Time.deltaTime * 1.5f), 0f, 0f);
 		}
 		if(level == 4)
 		{
-			transform.Translate((Time.deltaTime * 3f), 0f, 0f);
+			transform.Translate((Time.deltaTime * 2f), 0f, 0f);
 		}
 	}
 }

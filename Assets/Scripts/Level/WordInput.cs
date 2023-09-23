@@ -22,7 +22,7 @@ public class WordInput : MonoBehaviour
 				{
 					pauseMenu.Pause();
 				}
-				else if(Input.GetKeyDown(KeyCode.Space) && (level == 3 || level == 4))
+				else if(Input.GetKeyDown(KeyCode.Space) && (level == 2 || level == 3 || level == 4))
 				{
 					joker.startJoker();
 				}

@@ -16,16 +16,10 @@ public class Joker : MonoBehaviour
 
 	void Update()
 	{
-		if(level == 3 || level == 4)
+		if(level == 2 || level == 3 || level == 4)
 		{
 			if(!PauseMenu.gameIsPaused && !GameManager.gameHasEnded)
 			{
-				if(GameObject.FindGameObjectsWithTag("Word").Length == 0)
-				{
-					mAnimator.SetTrigger("TrEnd"); // end anim joker
-					Time.timeScale = 1f; // end joker
-				}
-
 				if(jokerAvailable)
 				{
 					mAnimator.SetTrigger("TrStart"); // start anim joker
@@ -40,6 +34,7 @@ public class Joker : MonoBehaviour
 		{
 			Time.timeScale = 0f; // start joker
 			jokerAvailable = false;
+			mAnimator.SetTrigger("TrEnd"); // end anim joker
 		}
 	}
 }

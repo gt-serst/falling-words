@@ -3846,6 +3846,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eabf3a4b8a85b40c78f6ddf721dbc9ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  wordManager: {fileID: 499588508}
   jokerAvailable: 0
   level: 0
 --- !u!212 &1828578410

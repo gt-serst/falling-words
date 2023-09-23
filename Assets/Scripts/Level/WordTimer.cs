@@ -4,24 +4,27 @@ public class WordTimer : MonoBehaviour
 {
 	//words spawn more and more faster
 	public WordManager wordManager;
-	public float wordDelay;
-	private float nextWordTime = 0f;
-	public int level;
+	//public float wordDelay;
+	//private float nextWordTime = 0f;
+	//public int level;
 	public GameObject[] gameObjects;
+/*
 	public void Awake ()
 	{
 		level = PlayerPrefs.GetInt("Sauv_Language"); //recup de la variable sauv dans les PlayerPrefs
 	}
+*/
 	private void Update ()
-	{
-		if(level == 1 || level == 2)
+	{//no word delay because the user should entirely type the word for a new word occurence
+		if(!PauseMenu.gameIsPaused && !GameManager.gameHasEnded)
 		{
 			if(GameObject.FindGameObjectsWithTag("Word").Length == 0)
 			{
 				wordManager.AddWord();
+				Time.timeScale = 1f;
 			}
 		}
-
+/* if condition to put a word delay between each word occurence
 		if(level == 3)
 		{
 			wordDelay = 4f;
@@ -42,5 +45,6 @@ public class WordTimer : MonoBehaviour
 			}
 
 		}
+*/
 	}
 }
